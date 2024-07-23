@@ -27,6 +27,7 @@ const (
 	StockSearchXetra      StockSearch = "xetra"
 	StockSearchNSE        StockSearch = "nse"
 	StockSearchLSE        StockSearch = "lse"
+	StockSearchJPX        StockSearch = "jpx"
 
 	IndexSP500     Index = "S&P 500"
 	IndexDowJones  Index = "Dow Jones"

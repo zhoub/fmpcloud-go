@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	jsoniter "github.com/json-iterator/go"
-	"github.com/spacecodewor/fmpcloud-go/objects"
+	"github.com/zhoub/fmpcloud-go/objects"
 )
 
 // Url const for request
