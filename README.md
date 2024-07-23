@@ -130,5 +130,4 @@ Historical candles support (count) (Daily from 1980):
 
 ## License
 
-[MIT](https://github.com/spacecodewor/fmpcloud-go/blob/master/LICENSE)
 [MIT](https://github.com/zhoub/fmpcloud-go/blob/master/LICENSE)
