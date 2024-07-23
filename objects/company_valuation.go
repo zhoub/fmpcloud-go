@@ -1479,7 +1479,7 @@ type EnterpriseValue struct {
 	NumberOfShares              int64   `json:"numberOfShares"`
 	MarketCapitalization        float64 `json:"marketCapitalization"`
 	MinusCashAndCashEquivalents int64   `json:"minusCashAndCashEquivalents"`
-	AddTotalDebt                int64   `json:"addTotalDebt"`
+	AddTotalDebt                float64 `json:"addTotalDebt"`
 	EnterpriseValue             float64 `json:"enterpriseValue"`
 }
 
