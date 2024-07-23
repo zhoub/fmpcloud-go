@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/spacecodewor/fmpcloud-go/objects"
+	"github.com/zhoub/fmpcloud-go/objects"
 )
 
 func TestForexAvalibleSymbols(t *testing.T) {
