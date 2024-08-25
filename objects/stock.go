@@ -139,7 +139,7 @@ type StockCompanyProfile struct {
 	Symbol            string  `json:"symbol" csv:"Symbol"`
 	Price             float64 `json:"price" csv:"Price"`
 	Beta              float64 `json:"beta" csv:"Beta"`
-	VolAvg            int64   `json:"volAvg" csv:"VolAvg"`
+	VolAvg            float64 `json:"volAvg" csv:"VolAvg"`
 	MktCap            int64   `json:"mktCap" csv:"MktCap"`
 	LastDiv           float64 `json:"lastDiv" csv:"LastDiv"`
 	Range             string  `json:"range" csv:"Range"`
