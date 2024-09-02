@@ -1453,7 +1453,7 @@ func (c *CompanyValuation) SharesFloatAll() (sList []objects.SharesFloat, err er
 }
 
 // SharesFloat - Shares float for symbol
-func (c *CompanyValuation) SharesFloat(symbol string) (ipoList []objects.IPOCalendar, err error) {
+func (c *CompanyValuation) SharesFloat(symbol string) (sList []objects.SharesFloat, err error) {
 	data, err := c.Client.Get(
 		urlAPICompanyValuationSharesFloat,
 		map[string]string{
@@ -1464,10 +1464,10 @@ func (c *CompanyValuation) SharesFloat(symbol string) (ipoList []objects.IPOCale
 		return nil, err
 	}
 
-	err = jsoniter.Unmarshal(data.Body(), &ipoList)
+	err = jsoniter.Unmarshal(data.Body(), &sList)
 	if err != nil {
 		return nil, err
 	}
 
-	return ipoList, nil
+	return sList, nil
 }

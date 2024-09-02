@@ -783,3 +783,15 @@ func TestBulkScores(t *testing.T) {
 		t.Fatal(err.Error())
 	}
 }
+
+func TestSharesFloat(t *testing.T) {
+	APIClient, err := NewAPIClient(testCaseAPIConfig)
+	if err != nil {
+		t.Fatal(err.Error())
+	}
+
+	_, err = APIClient.CompanyValuation.SharesFloat(testCaseSymbolList[0])
+	if err != nil {
+		t.Fatal(err.Error())
+	}
+}
