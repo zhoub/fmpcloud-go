@@ -10,7 +10,7 @@ type Exchange struct {
 	Client *HTTPClient
 }
 
-func (f *Forex) AvailableExchanges() (eList []string, err error) {
+func (f *Exchange) AvailableExchanges() (eList []string, err error) {
 	data, err := f.Client.Get(urlAPIExchangesList, nil)
 	if err != nil {
 		return nil, err

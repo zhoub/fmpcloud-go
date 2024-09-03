@@ -8,7 +8,7 @@ func TestAvailableExchanges(t *testing.T) {
 		t.Fatal(err.Error())
 	}
 
-	_, err = APIClient.Forex.AvailableExchanges()
+	_, err = APIClient.Exchange.AvailableExchanges()
 	if err != nil {
 		t.Fatal(err.Error())
 	}
