@@ -28,3 +28,12 @@ type ExchangeHolidays struct {
 	ThanksgivingDay string `json:"Thanksgiving Day"`
 	Christmas       string `json:"Christmas"`
 }
+
+// ExchangeMarket ...
+type ExchangeMarket struct {
+	Name         string `json:"name"`
+	OpeningHour  string `json:"openingHour"`
+	ClosingHour  string `json:"closingHour"`
+	Timezone     string `json:"timezone"`
+	IsMarketOpen bool   `json:"isMarketOpen"`
+}
