@@ -35,6 +35,7 @@ type APIClient struct {
 	InsiderTrading     *InsiderTrading
 	AlternativeData    *AlternativeData
 	Economics          *Economics
+	Exchange           *Exchange
 	API                *API
 	Logger             *zap.Logger
 	Debug              bool
@@ -119,6 +120,7 @@ func NewAPIClient(cfg Config) (*APIClient, error) {
 	APIClient.InsiderTrading = &InsiderTrading{Client: HTTPClient}
 	APIClient.AlternativeData = &AlternativeData{Client: HTTPClient}
 	APIClient.Economics = &Economics{Client: HTTPClient}
+	APIClient.Exchange = &Exchange{Client: HTTPClient}
 
 	return APIClient, nil
 }
