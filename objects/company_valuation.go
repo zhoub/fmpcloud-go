@@ -2222,7 +2222,7 @@ type SharesFloat struct {
 	Symbol            string  `json:"symbol"`
 	Date              string  `json:"date"`
 	FreeFloat         float64 `json:"freeFloat"`
-	FloatShares       int64   `json:"floatShares"`
-	OutstandingShares int64   `json:"outstandingShares"`
+	FloatShares       float64 `json:"floatShares"`
+	OutstandingShares float64 `json:"outstandingShares"`
 	Source            string  `json:"source"`
 }
