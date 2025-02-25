@@ -202,8 +202,30 @@ func (s *Stock) CompanyProfile(symbol string) (companyProfile []objects.StockCom
 	if err != nil {
 		return nil, err
 	}
+	dataBody := data.Body()
 
-	err = jsoniter.Unmarshal(data.Body(), &companyProfile)
+	// Check if mktCap is float64 and convert to int64 if needed
+	var cpList []map[string]interface{}
+	if err := jsoniter.Unmarshal(dataBody, &cpList); err != nil {
+		return nil, err
+	}
+
+	// Handle array of profiles
+	for _, cp := range cpList {
+		if mktCap, exists := cp["mktCap"]; exists {
+			if mktCapFloat, ok := mktCap.(float64); ok {
+				cp["mktCap"] = int64(mktCapFloat)
+			}
+		}
+	}
+
+	// Re-encode the modified data
+	dataBody, err = jsoniter.Marshal(cpList)
+	if err != nil {
+		return nil, err
+	}
+
+	err = jsoniter.Unmarshal(dataBody, &companyProfile)
 	if err != nil {
 		return nil, err
 	}
