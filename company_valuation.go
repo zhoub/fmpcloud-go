@@ -695,8 +695,20 @@ func (c *CompanyValuation) EnterpriseValue(req objects.RequestEnterpriseValue) (
 	if err != nil {
 		return nil, err
 	}
+	dataBody := data.Body()
 
-	err = jsoniter.Unmarshal(data.Body(), &vList)
+	// Fix numberOfShares.
+	var a []map[string]interface{}
+	if err := jsoniter.Unmarshal(dataBody, &a); err != nil {
+		return nil, err
+	}
+	JsonFieldFloat64ToInt64(a, "numberOfShares")
+	dataBody, err = jsoniter.Marshal(a)
+	if err != nil {
+		return nil, err
+	}
+
+	err = jsoniter.Unmarshal(dataBody, &vList)
 	if err != nil {
 		return nil, err
 	}
