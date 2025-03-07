@@ -10,11 +10,11 @@ import (
 
 // Url const for request
 const (
-	urlAPIForexListAndQuotes = "/v3/fx"
-	urlAPIForexSymbols       = "/v3/symbol/available-forex-currency-pairs"
-	urlAPIForexQuotes        = "/v3/quotes/forex"
-	urlAPIForexCandles       = "/v3/historical-chart/%s/%s"
-	urlAPIForexDaily         = "/v3/historical-price-full/%s"
+	UrlAPIForexListAndQuotes = "/v3/fx"
+	UrlAPIForexSymbols       = "/v3/symbol/available-forex-currency-pairs"
+	UrlAPIForexQuotes        = "/v3/quotes/forex"
+	UrlAPIForexCandles       = "/v3/historical-chart/%s/%s"
+	UrlAPIForexDaily         = "/v3/historical-price-full/%s"
 )
 
 // Forex client
@@ -24,7 +24,7 @@ type Forex struct {
 
 // AvalibleSymbols - available symbol list
 func (f *Forex) AvalibleSymbols() (sList []objects.ForexSymbol, err error) {
-	data, err := f.Client.Get(urlAPIForexSymbols, nil)
+	data, err := f.Client.Get(UrlAPIForexSymbols, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -39,7 +39,7 @@ func (f *Forex) AvalibleSymbols() (sList []objects.ForexSymbol, err error) {
 
 // Quotes - all real-time prices
 func (f *Forex) Quotes() (qList []objects.ForexQuote, err error) {
-	data, err := f.Client.Get(urlAPIForexQuotes, nil)
+	data, err := f.Client.Get(UrlAPIForexQuotes, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -54,7 +54,7 @@ func (f *Forex) Quotes() (qList []objects.ForexQuote, err error) {
 
 // ListSymbolsAndQuotes - Forex List And Price (Get last bid/ask data)
 func (f *Forex) ListSymbolsAndQuotes() (bList []objects.ForexBindAsk, err error) {
-	data, err := f.Client.Get(urlAPIForexListAndQuotes, nil)
+	data, err := f.Client.Get(UrlAPIForexListAndQuotes, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -78,7 +78,7 @@ func (f *Forex) Candles(req objects.RequestForexCandleList) (cList []objects.For
 		reqParam["to"] = req.To.Format("2006-01-02")
 	}
 
-	data, err := f.Client.Get(fmt.Sprintf(urlAPIForexCandles, req.Period, req.Symbol), reqParam)
+	data, err := f.Client.Get(fmt.Sprintf(UrlAPIForexCandles, req.Period, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -93,7 +93,7 @@ func (f *Forex) Candles(req objects.RequestForexCandleList) (cList []objects.For
 
 // DailyLine - faily line
 func (f *Forex) DailyLine(symbol string, serieType objects.ForexSerieType) (cList *objects.ForexDailyLineList, err error) {
-	data, err := f.Client.Get(fmt.Sprintf(urlAPIForexDaily, symbol), map[string]string{"serietype": string(serieType)})
+	data, err := f.Client.Get(fmt.Sprintf(UrlAPIForexDaily, symbol), map[string]string{"serietype": string(serieType)})
 	if err != nil {
 		return nil, err
 	}
@@ -108,7 +108,7 @@ func (f *Forex) DailyLine(symbol string, serieType objects.ForexSerieType) (cLis
 
 // DailyChangeAndVolume - daily candle change and volume
 func (f *Forex) DailyChangeAndVolume(symbol string) (cList *objects.ForexDailyCandleList, err error) {
-	data, err := f.Client.Get(fmt.Sprintf(urlAPIForexDaily, symbol), nil)
+	data, err := f.Client.Get(fmt.Sprintf(UrlAPIForexDaily, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -124,7 +124,7 @@ func (f *Forex) DailyChangeAndVolume(symbol string) (cList *objects.ForexDailyCa
 // DailySpecificPeriod - daily candle list by specific period
 func (f *Forex) DailySpecificPeriod(symbol string, from time.Time, to time.Time) (cList *objects.ForexDailyCandleList, err error) {
 	data, err := f.Client.Get(
-		fmt.Sprintf(urlAPIForexDaily, symbol),
+		fmt.Sprintf(UrlAPIForexDaily, symbol),
 		map[string]string{
 			"from": from.Format("2006-01-02"),
 			"to":   to.Format("2006-01-02"),
@@ -143,7 +143,7 @@ func (f *Forex) DailySpecificPeriod(symbol string, from time.Time, to time.Time)
 
 // DailyLastNDays - daily candle list last N days
 func (f *Forex) DailyLastNDays(symbol string, days int) (cList *objects.ForexDailyCandleList, err error) {
-	data, err := f.Client.Get(fmt.Sprintf(urlAPIForexDaily, symbol), map[string]string{"timeseries": fmt.Sprint(days)})
+	data, err := f.Client.Get(fmt.Sprintf(UrlAPIForexDaily, symbol), map[string]string{"timeseries": fmt.Sprint(days)})
 	if err != nil {
 		return nil, err
 	}

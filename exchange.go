@@ -6,8 +6,8 @@ import (
 )
 
 const (
-	urlAPIExchangesList      = "/v3/exchanges-list"
-	urlAPIIsTheMarketOpenAll = "/v3/is-the-market-open-all"
+	UrlAPIExchangesList      = "/v3/exchanges-list"
+	UrlAPIIsTheMarketOpenAll = "/v3/is-the-market-open-all"
 )
 
 type Exchange struct {
@@ -15,7 +15,7 @@ type Exchange struct {
 }
 
 func (f *Exchange) AvailableExchanges() (eList []string, err error) {
-	data, err := f.Client.Get(urlAPIExchangesList, nil)
+	data, err := f.Client.Get(UrlAPIExchangesList, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -29,7 +29,7 @@ func (f *Exchange) AvailableExchanges() (eList []string, err error) {
 }
 
 func (f *Exchange) IsTheMarketOpenAll() (emList []objects.ExchangeMarket, err error) {
-	data, err := f.Client.Get(urlAPIIsTheMarketOpenAll, nil)
+	data, err := f.Client.Get(UrlAPIIsTheMarketOpenAll, nil)
 	if err != nil {
 		return nil, err
 	}

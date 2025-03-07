@@ -12,43 +12,43 @@ import (
 
 // Url const for request
 const (
-	urlAPIStockSymbolList                = "/v3/stock/list"
-	urlAPIStockSymbolByExchangeList      = "/v3/symbol/%s"
-	urlAPIStockBulkProfile               = "/v4/profile/all"
-	urlAPIStockCompanyProfile            = "/v3/profile/%s"
-	urlAPIStockCompanyExecutives         = "/v3/key-executives/%s"
-	urlAPIStockDividends                 = "/v3/historical-price-full/stock_dividend/%s"
-	urlAPIStockSplits                    = "/v3/historical-price-full/stock_split/%s"
-	urlAPIStockQuote                     = "/v3/quote/%s"
-	urlAPIStockQuoteShot                 = "/v3/quote-short/%s"
-	urlAPIStockQuotes                    = "/v3/quotes/%s"
-	urlAPIStockSearch                    = "/v3/search"
-	urlAPIStockSearchTicker              = "/v3/search-ticker"
-	urlAPIStockSearchName                = "/v3/search-name"
-	urlAPIStockCandles                   = "/v3/historical-chart/%s/%s"
-	urlAPIStockDaily                     = "/v3/historical-price-full/%s"
-	urlAPIStockSP500List                 = "/v3/sp500_constituent"
-	urlAPIStockHistorySP500List          = "/v3/historical/sp500_constituent"
-	urlAPIStockDowJonesList              = "/v3/dowjones_constituent"
-	urlAPIStockHistoryDowJonesList       = "/v3/historical/dowjones_constituent"
-	urlAPIStockNasdaqList                = "/v3/nasdaq_constituent"
-	urlAPIStockHistoryNasdaqList         = "/v3/historical/nasdaq_constituent"
-	urlAPIStockEODCandles                = "/v3/batch-request-end-of-day-prices"
-	urlAPIStockEODBatchCandles           = "/v3/batch-request-end-of-day-prices/%s"
-	urlAPIStockEODBatchPrices            = "/v4/batch-request-end-of-day-prices"
-	urlAPIStockMarketHours               = "/v3/market-hours"
-	urlAPIStockActives                   = "/v3/actives"
-	urlAPIStockLosers                    = "/v3/losers"
-	urlAPIStockGainers                   = "/v3/gainers"
-	urlAPIStockSectorsPerformance        = "/v3/sectors-performance"
-	urlAPIStockOTCRealTimePrice          = "/v3/otc/real-time-price/%s"
-	urlAPIStockHistorySectorsPerformance = "/v3/historical-sectors-performance"
-	urlAPIStockPeers                     = "/v4/stock_peers"
-	urlAPIStockBulkPeers                 = "/v4/stock_peers_bulk"
-	urlAPIStockCompanyCoreInformation    = "/v4/company-core-information"
-	urlAPIStockSurvivorshipBiasFree      = "/v4/historical-price-full/%s/%s"
-	urlAPIStockPriceChange               = "/v3/stock-price-change/%s"
-	urlAPIStockPriceChangeBatch          = "/v3/stock-price-change/%s"
+	UrlAPIStockSymbolList                = "/v3/stock/list"
+	UrlAPIStockSymbolByExchangeList      = "/v3/symbol/%s"
+	UrlAPIStockBulkProfile               = "/v4/profile/all"
+	UrlAPIStockCompanyProfile            = "/v3/profile/%s"
+	UrlAPIStockCompanyExecutives         = "/v3/key-executives/%s"
+	UrlAPIStockDividends                 = "/v3/historical-price-full/stock_dividend/%s"
+	UrlAPIStockSplits                    = "/v3/historical-price-full/stock_split/%s"
+	UrlAPIStockQuote                     = "/v3/quote/%s"
+	UrlAPIStockQuoteShot                 = "/v3/quote-short/%s"
+	UrlAPIStockQuotes                    = "/v3/quotes/%s"
+	UrlAPIStockSearch                    = "/v3/search"
+	UrlAPIStockSearchTicker              = "/v3/search-ticker"
+	UrlAPIStockSearchName                = "/v3/search-name"
+	UrlAPIStockCandles                   = "/v3/historical-chart/%s/%s"
+	UrlAPIStockDaily                     = "/v3/historical-price-full/%s"
+	UrlAPIStockSP500List                 = "/v3/sp500_constituent"
+	UrlAPIStockHistorySP500List          = "/v3/historical/sp500_constituent"
+	UrlAPIStockDowJonesList              = "/v3/dowjones_constituent"
+	UrlAPIStockHistoryDowJonesList       = "/v3/historical/dowjones_constituent"
+	UrlAPIStockNasdaqList                = "/v3/nasdaq_constituent"
+	UrlAPIStockHistoryNasdaqList         = "/v3/historical/nasdaq_constituent"
+	UrlAPIStockEODCandles                = "/v3/batch-request-end-of-day-prices"
+	UrlAPIStockEODBatchCandles           = "/v3/batch-request-end-of-day-prices/%s"
+	UrlAPIStockEODBatchPrices            = "/v4/batch-request-end-of-day-prices"
+	UrlAPIStockMarketHours               = "/v3/market-hours"
+	UrlAPIStockActives                   = "/v3/actives"
+	UrlAPIStockLosers                    = "/v3/losers"
+	UrlAPIStockGainers                   = "/v3/gainers"
+	UrlAPIStockSectorsPerformance        = "/v3/sectors-performance"
+	UrlAPIStockOTCRealTimePrice          = "/v3/otc/real-time-price/%s"
+	UrlAPIStockHistorySectorsPerformance = "/v3/historical-sectors-performance"
+	UrlAPIStockPeers                     = "/v4/stock_peers"
+	UrlAPIStockBulkPeers                 = "/v4/stock_peers_bulk"
+	UrlAPIStockCompanyCoreInformation    = "/v4/company-core-information"
+	UrlAPIStockSurvivorshipBiasFree      = "/v4/historical-price-full/%s/%s"
+	UrlAPIStockPriceChange               = "/v3/stock-price-change/%s"
+	UrlAPIStockPriceChangeBatch          = "/v3/stock-price-change/%s"
 )
 
 // Stock client
@@ -58,7 +58,7 @@ type Stock struct {
 
 // QuoteShort - real-time single quote short
 func (s *Stock) QuoteShort(symbol string) (qList []objects.StockQuoteShot, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockQuoteShot, symbol), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockQuoteShot, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -73,7 +73,7 @@ func (s *Stock) QuoteShort(symbol string) (qList []objects.StockQuoteShot, err e
 
 // Quote - real-time single quote
 func (s *Stock) Quote(symbol string) (qList []objects.StockQuote, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockQuote, symbol), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockQuote, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -88,7 +88,7 @@ func (s *Stock) Quote(symbol string) (qList []objects.StockQuote, err error) {
 
 // BatchQuote - real-time batch quote
 func (s *Stock) BatchQuote(symbolList []string) (qList []objects.StockQuote, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockQuote, strings.Join(symbolList, ",")), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockQuote, strings.Join(symbolList, ",")), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -103,7 +103,7 @@ func (s *Stock) BatchQuote(symbolList []string) (qList []objects.StockQuote, err
 
 // QuoteByExchange - real-time single quote
 func (s *Stock) QuoteByExchange(exchange objects.StockSearch) (qList []objects.StockQuote, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockQuotes, exchange.String()), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockQuotes, exchange.String()), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -126,7 +126,7 @@ func (s *Stock) Search(req objects.RequestStockSearch) (sList []objects.StockSym
 		reqParam["exchange"] = req.Exchange.String()
 	}
 
-	data, err := s.Client.Get(urlAPIStockSearch, reqParam)
+	data, err := s.Client.Get(UrlAPIStockSearch, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -149,7 +149,7 @@ func (s *Stock) SearchTiker(req objects.RequestStockSearch) (sList []objects.Sto
 		reqParam["exchange"] = req.Exchange.String()
 	}
 
-	data, err := s.Client.Get(urlAPIStockSearchTicker, reqParam)
+	data, err := s.Client.Get(UrlAPIStockSearchTicker, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -172,7 +172,7 @@ func (s *Stock) SearchByName(req objects.RequestStockSearch) (sList []objects.St
 		reqParam["exchange"] = req.Exchange.String()
 	}
 
-	data, err := s.Client.Get(urlAPIStockSearchName, reqParam)
+	data, err := s.Client.Get(UrlAPIStockSearchName, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -187,7 +187,7 @@ func (s *Stock) SearchByName(req objects.RequestStockSearch) (sList []objects.St
 
 // BulkProfile - get all available profiles
 func (s *Stock) BulkProfile() (companyProfile []objects.StockCompanyProfile, err error) {
-	data, err := s.Client.Get(urlAPIStockBulkProfile, nil)
+	data, err := s.Client.Get(UrlAPIStockBulkProfile, nil)
 	if err != nil {
 		return
 	}
@@ -198,7 +198,7 @@ func (s *Stock) BulkProfile() (companyProfile []objects.StockCompanyProfile, err
 
 // CompanyProfile - get general information of a company. You can query by symbol.
 func (s *Stock) CompanyProfile(symbol string) (companyProfile []objects.StockCompanyProfile, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockCompanyProfile, symbol), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockCompanyProfile, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -225,7 +225,7 @@ func (s *Stock) CompanyProfile(symbol string) (companyProfile []objects.StockCom
 
 // Peers - Stock peers based on sector, exchange and market cap
 func (s *Stock) Peers(symbol string) (pList []objects.StockPeers, err error) {
-	data, err := s.Client.Get(urlAPIStockPeers, map[string]string{"symbol": symbol})
+	data, err := s.Client.Get(UrlAPIStockPeers, map[string]string{"symbol": symbol})
 	if err != nil {
 		return nil, err
 	}
@@ -240,7 +240,7 @@ func (s *Stock) Peers(symbol string) (pList []objects.StockPeers, err error) {
 
 // BulkPeers - Stock peers for all symbols with profile CSV
 func (s *Stock) BulkPeers() (pList []objects.StockBulkPeers, err error) {
-	data, err := s.Client.Get(urlAPIStockBulkPeers, nil)
+	data, err := s.Client.Get(UrlAPIStockBulkPeers, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -255,7 +255,7 @@ func (s *Stock) BulkPeers() (pList []objects.StockBulkPeers, err error) {
 
 // CompanyCoreInformation - Company core information
 func (s *Stock) CompanyCoreInformation(symbol string) (company []objects.CompanyCoreInformation, err error) {
-	data, err := s.Client.Get(urlAPIStockCompanyCoreInformation, map[string]string{"symbol": symbol})
+	data, err := s.Client.Get(UrlAPIStockCompanyCoreInformation, map[string]string{"symbol": symbol})
 	if err != nil {
 		return nil, err
 	}
@@ -270,7 +270,7 @@ func (s *Stock) CompanyCoreInformation(symbol string) (company []objects.Company
 
 // CompanyExecutive - get a list of company's executives and members of the Board.
 func (s *Stock) CompanyExecutive(symbol string) (companyProfile []objects.CompanyExecutive, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockCompanyExecutives, symbol), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockCompanyExecutives, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -294,7 +294,7 @@ func (s *Stock) Candles(req objects.RequestStockCandleList) (cList []objects.Sto
 		reqParam["to"] = req.To.Format("2006-01-02")
 	}
 
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockCandles, req.Period, req.Symbol), reqParam)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockCandles, req.Period, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -309,7 +309,7 @@ func (s *Stock) Candles(req objects.RequestStockCandleList) (cList []objects.Sto
 
 // DailyLine - daily line
 func (s *Stock) DailyLine(symbol string, serieType objects.StockSerieType) (cList *objects.StockDailyLineList, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockDaily, symbol), map[string]string{"serietype": string(serieType)})
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockDaily, symbol), map[string]string{"serietype": string(serieType)})
 	if err != nil {
 		return nil, err
 	}
@@ -324,7 +324,7 @@ func (s *Stock) DailyLine(symbol string, serieType objects.StockSerieType) (cLis
 
 // DailyChangeAndVolume - daily candle change and volume
 func (s *Stock) DailyChangeAndVolume(symbol string) (cList *objects.StockDailyCandleList, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockDaily, symbol), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockDaily, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -340,7 +340,7 @@ func (s *Stock) DailyChangeAndVolume(symbol string) (cList *objects.StockDailyCa
 // DailySpecificPeriod - daily candle list by specific period
 func (s *Stock) DailySpecificPeriod(symbol string, from time.Time, to time.Time) (cList *objects.StockDailyCandleList, err error) {
 	data, err := s.Client.Get(
-		fmt.Sprintf(urlAPIStockDaily, symbol),
+		fmt.Sprintf(UrlAPIStockDaily, symbol),
 		map[string]string{
 			"from": from.Format("2006-01-02"),
 			"to":   to.Format("2006-01-02"),
@@ -359,7 +359,7 @@ func (s *Stock) DailySpecificPeriod(symbol string, from time.Time, to time.Time)
 
 // DailyLastNDays - daily candle list last N days
 func (s *Stock) DailyLastNDays(symbol string, days int) (cList *objects.StockDailyCandleList, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockDaily, symbol), map[string]string{"timeseries": fmt.Sprint(days)})
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockDaily, symbol), map[string]string{"timeseries": fmt.Sprint(days)})
 	if err != nil {
 		return nil, err
 	}
@@ -383,7 +383,7 @@ func (s *Stock) DailyBatch(symbolList []string, from *time.Time, to *time.Time) 
 		reqParam["to"] = to.Format("2006-01-02")
 	}
 
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockDaily, strings.Join(symbolList, ",")), reqParam)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockDaily, strings.Join(symbolList, ",")), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -413,7 +413,7 @@ func (s *Stock) DailyBatch(symbolList []string, from *time.Time, to *time.Time) 
 
 // Dividends - stock dividends
 func (s *Stock) Dividends(symbol string) (dList *objects.StockDividends, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockDividends, symbol), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockDividends, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -428,7 +428,7 @@ func (s *Stock) Dividends(symbol string) (dList *objects.StockDividends, err err
 
 // Splits - stock splits
 func (s *Stock) Splits(symbol string) (sList *objects.StockSplit, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockSplits, symbol), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockSplits, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -443,7 +443,7 @@ func (s *Stock) Splits(symbol string) (sList *objects.StockSplit, err error) {
 
 // AvalibleSymbolsByExchange - symbol list by exchange
 func (s *Stock) AvalibleSymbolsByExchange(exchange objects.StockSymbolExchange) (sList []objects.StockSymbol, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockSymbolByExchangeList, exchange.String()), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockSymbolByExchangeList, exchange.String()), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -458,7 +458,7 @@ func (s *Stock) AvalibleSymbolsByExchange(exchange objects.StockSymbolExchange) 
 
 // AvalibleSymbols - all avalible symbol list
 func (s *Stock) AvalibleSymbols() (sList []objects.StockSymbolList, err error) {
-	data, err := s.Client.Get(urlAPIStockSymbolList, nil)
+	data, err := s.Client.Get(UrlAPIStockSymbolList, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -476,11 +476,11 @@ func (s *Stock) IndexConstituentList(index objects.Index) (sList []objects.Index
 	var endpoint string
 	switch index {
 	case objects.IndexSP500:
-		endpoint = urlAPIStockSP500List
+		endpoint = UrlAPIStockSP500List
 	case objects.IndexDowJones:
-		endpoint = urlAPIStockDowJonesList
+		endpoint = UrlAPIStockDowJonesList
 	case objects.IndexNasdaq100:
-		endpoint = urlAPIStockNasdaqList
+		endpoint = UrlAPIStockNasdaqList
 	}
 
 	data, err := s.Client.Get(endpoint, nil)
@@ -501,11 +501,11 @@ func (s *Stock) HistoryIndexConstituentList(index objects.Index) (sList []object
 	var endpoint string
 	switch index {
 	case objects.IndexSP500:
-		endpoint = urlAPIStockHistorySP500List
+		endpoint = UrlAPIStockHistorySP500List
 	case objects.IndexDowJones:
-		endpoint = urlAPIStockHistoryDowJonesList
+		endpoint = UrlAPIStockHistoryDowJonesList
 	case objects.IndexNasdaq100:
-		endpoint = urlAPIStockHistoryNasdaqList
+		endpoint = UrlAPIStockHistoryNasdaqList
 	}
 
 	data, err := s.Client.Get(endpoint, nil)
@@ -523,7 +523,7 @@ func (s *Stock) HistoryIndexConstituentList(index objects.Index) (sList []object
 
 // EODCandleList - all stocks Batch EOD stock price
 func (s *Stock) EODCandleList(date time.Time) (sList []objects.StockEODCandle, err error) {
-	data, err := s.Client.Get(urlAPIStockEODCandles, map[string]string{"date": date.Format("2006-01-02")})
+	data, err := s.Client.Get(UrlAPIStockEODCandles, map[string]string{"date": date.Format("2006-01-02")})
 	if err != nil {
 		return nil, err
 	}
@@ -539,7 +539,7 @@ func (s *Stock) EODCandleList(date time.Time) (sList []objects.StockEODCandle, e
 // BatchEODCandleList - specific Stocks Batch EOD stock prices
 func (s *Stock) BatchEODCandleList(symbolList []string, date time.Time) (sList []objects.StockEODCandle, err error) {
 	data, err := s.Client.Get(
-		fmt.Sprintf(urlAPIStockEODBatchCandles, strings.Join(symbolList, ",")),
+		fmt.Sprintf(UrlAPIStockEODBatchCandles, strings.Join(symbolList, ",")),
 		map[string]string{
 			"date": date.Format("2006-01-02"),
 		})
@@ -557,7 +557,7 @@ func (s *Stock) BatchEODCandleList(symbolList []string, date time.Time) (sList [
 
 // PriceChangeBatch - Price percentage change for multiple timeframes
 func (s *Stock) PriceChange(symbol string) (sList []objects.StockPriceChange, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockPriceChange, symbol), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockPriceChange, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -572,7 +572,7 @@ func (s *Stock) PriceChange(symbol string) (sList []objects.StockPriceChange, er
 
 // PriceChangeBatch - Multiple companies price percentage change
 func (s *Stock) PriceChangeBatch(symbolList []string) (sList []objects.StockPriceChange, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockPriceChangeBatch, strings.Join(symbolList, ",")), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockPriceChangeBatch, strings.Join(symbolList, ",")), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -587,7 +587,7 @@ func (s *Stock) PriceChangeBatch(symbolList []string) (sList []objects.StockPric
 
 // EODBatchPrices ...
 func (s *Stock) EODBatchPrices(date time.Time) (sList []objects.StockEODCandle, err error) {
-	data, err := s.Client.Get(urlAPIStockEODBatchPrices, map[string]string{"date": date.Format("2006-01-02")})
+	data, err := s.Client.Get(UrlAPIStockEODBatchPrices, map[string]string{"date": date.Format("2006-01-02")})
 	if err != nil {
 		return nil, err
 	}
@@ -602,7 +602,7 @@ func (s *Stock) EODBatchPrices(date time.Time) (sList []objects.StockEODCandle, 
 
 // ExchangeTradingHours - stock market trading hours
 func (s *Stock) ExchangeTradingHours() (eList []objects.Exchange, err error) {
-	data, err := s.Client.Get(urlAPIStockMarketHours, nil)
+	data, err := s.Client.Get(UrlAPIStockMarketHours, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -617,7 +617,7 @@ func (s *Stock) ExchangeTradingHours() (eList []objects.Exchange, err error) {
 
 // Actives - stock market top active
 func (s *Stock) Actives() (aList []objects.Active, err error) {
-	data, err := s.Client.Get(urlAPIStockActives, nil)
+	data, err := s.Client.Get(UrlAPIStockActives, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -632,7 +632,7 @@ func (s *Stock) Actives() (aList []objects.Active, err error) {
 
 // Losers - stock market top losers
 func (s *Stock) Losers() (lList []objects.Loser, err error) {
-	data, err := s.Client.Get(urlAPIStockLosers, nil)
+	data, err := s.Client.Get(UrlAPIStockLosers, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -647,7 +647,7 @@ func (s *Stock) Losers() (lList []objects.Loser, err error) {
 
 // Gainers - stock market top gainers
 func (s *Stock) Gainers() (gList []objects.Gainer, err error) {
-	data, err := s.Client.Get(urlAPIStockGainers, nil)
+	data, err := s.Client.Get(UrlAPIStockGainers, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -662,7 +662,7 @@ func (s *Stock) Gainers() (gList []objects.Gainer, err error) {
 
 // SectorPerformance - stock market sector performance
 func (s *Stock) SectorPerformance() (eList []objects.Sector, err error) {
-	data, err := s.Client.Get(urlAPIStockSectorsPerformance, nil)
+	data, err := s.Client.Get(UrlAPIStockSectorsPerformance, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -677,7 +677,7 @@ func (s *Stock) SectorPerformance() (eList []objects.Sector, err error) {
 
 // HistorySectorPerformance - historical stock market sector performance
 func (s *Stock) HistorySectorPerformance() (eList []objects.HistorySector, err error) {
-	data, err := s.Client.Get(urlAPIStockHistorySectorsPerformance, nil)
+	data, err := s.Client.Get(UrlAPIStockHistorySectorsPerformance, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -692,7 +692,7 @@ func (s *Stock) HistorySectorPerformance() (eList []objects.HistorySector, err e
 
 // SurvivorshipBiasFree - Survivorship Bias Free end of day (only for api v4)
 func (s *Stock) SurvivorshipBiasFree(symbol string, date time.Time) (sBias *objects.SurvivorshipBiasFree, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockSurvivorshipBiasFree, symbol, date.Format("2006-01-02")), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockSurvivorshipBiasFree, symbol, date.Format("2006-01-02")), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -707,7 +707,7 @@ func (s *Stock) SurvivorshipBiasFree(symbol string, date time.Time) (sBias *obje
 
 // OTCRealTimePrice - Prices of OTC companies
 func (s *Stock) OTCRealTimePrice(symbolList []string) (pList *objects.OTCRealTimePrice, err error) {
-	data, err := s.Client.Get(fmt.Sprintf(urlAPIStockOTCRealTimePrice, strings.Join(symbolList, ",")), nil)
+	data, err := s.Client.Get(fmt.Sprintf(UrlAPIStockOTCRealTimePrice, strings.Join(symbolList, ",")), nil)
 	if err != nil {
 		return nil, err
 	}

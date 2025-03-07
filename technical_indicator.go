@@ -9,7 +9,7 @@ import (
 
 // Url const for request
 const (
-	urlAPITechnicalIndicatorSymbol = "/v3/technical_indicator/%s/%s"
+	UrlAPITechnicalIndicatorSymbol = "/v3/technical_indicator/%s/%s"
 )
 
 // TechnicalIndicator client
@@ -20,7 +20,7 @@ type TechnicalIndicator struct {
 // Indicators - Daily Indicators. Types: SMA - EMA - WMA - DEMA - TEMA - williams - RSI - ADX - standardDeviation
 func (t *TechnicalIndicator) Indicators(req objects.RequestIndicators) (iList []objects.ResponseIndicators, err error) {
 	data, err := t.Client.Get(
-		fmt.Sprintf(urlAPITechnicalIndicatorSymbol, req.Resolution.String(), req.Symbol),
+		fmt.Sprintf(UrlAPITechnicalIndicatorSymbol, req.Resolution.String(), req.Symbol),
 		map[string]string{
 			"type":   req.Indicator.String(),
 			"period": fmt.Sprint(req.Timeperiod),

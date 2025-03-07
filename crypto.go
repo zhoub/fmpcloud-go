@@ -10,10 +10,10 @@ import (
 
 // Url const for request
 const (
-	urlAPICryptoSymbols = "/v3/symbol/available-cryptocurrencies"
-	urlAPICryptoQuotes  = "/v3/quotes/crypto"
-	urlAPICryptoCandles = "/v3/historical-chart/%s/%s"
-	urlAPICryptoDaily   = "/v3/historical-price-full/%s"
+	UrlAPICryptoSymbols = "/v3/symbol/available-cryptocurrencies"
+	UrlAPICryptoQuotes  = "/v3/quotes/crypto"
+	UrlAPICryptoCandles = "/v3/historical-chart/%s/%s"
+	UrlAPICryptoDaily   = "/v3/historical-price-full/%s"
 )
 
 // Crypto client
@@ -23,7 +23,7 @@ type Crypto struct {
 
 // AvalibleSymbols - available symbol list
 func (c *Crypto) AvalibleSymbols() (sList []objects.CryptoSymbol, err error) {
-	data, err := c.Client.Get(urlAPICryptoSymbols, nil)
+	data, err := c.Client.Get(UrlAPICryptoSymbols, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -38,7 +38,7 @@ func (c *Crypto) AvalibleSymbols() (sList []objects.CryptoSymbol, err error) {
 
 // Quotes - all real-time prices
 func (c *Crypto) Quotes() (qList []objects.CryptoQuote, err error) {
-	data, err := c.Client.Get(urlAPICryptoQuotes, nil)
+	data, err := c.Client.Get(UrlAPICryptoQuotes, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *Crypto) Candles(req objects.RequestCryptoCandleList) (cList []objects.C
 		reqParam["to"] = req.To.Format("2006-01-02")
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICryptoCandles, req.Period, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICryptoCandles, req.Period, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -78,7 +78,7 @@ func (c *Crypto) Candles(req objects.RequestCryptoCandleList) (cList []objects.C
 // DailyLine - Daily line
 func (c *Crypto) DailyLine(symbol string, serieType objects.CryptoSerieType) (cList *objects.CryptoDailyLineList, err error) {
 	data, err := c.Client.Get(
-		fmt.Sprintf(urlAPICryptoDaily, symbol),
+		fmt.Sprintf(UrlAPICryptoDaily, symbol),
 		map[string]string{
 			"serietype": string(serieType),
 		})
@@ -96,7 +96,7 @@ func (c *Crypto) DailyLine(symbol string, serieType objects.CryptoSerieType) (cL
 
 // DailyChangeAndVolume - Daily candle change and volume
 func (c *Crypto) DailyChangeAndVolume(symbol string) (cList *objects.CryptoDailyCandleList, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICryptoDaily, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICryptoDaily, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -112,7 +112,7 @@ func (c *Crypto) DailyChangeAndVolume(symbol string) (cList *objects.CryptoDaily
 // DailySpecificPeriod - Daily candle list by specific period
 func (c *Crypto) DailySpecificPeriod(symbol string, from time.Time, to time.Time) (cList *objects.CryptoDailyCandleList, err error) {
 	data, err := c.Client.Get(
-		fmt.Sprintf(urlAPICryptoDaily, symbol),
+		fmt.Sprintf(UrlAPICryptoDaily, symbol),
 		map[string]string{
 			"from": from.Format("2006-01-02"),
 			"to":   to.Format("2006-01-02"),
@@ -132,7 +132,7 @@ func (c *Crypto) DailySpecificPeriod(symbol string, from time.Time, to time.Time
 // DailyLastNDays - Daily candle list last N days
 func (c *Crypto) DailyLastNDays(symbol string, days int) (cList *objects.CryptoDailyCandleList, err error) {
 	data, err := c.Client.Get(
-		fmt.Sprintf(urlAPICryptoDaily, symbol),
+		fmt.Sprintf(UrlAPICryptoDaily, symbol),
 		map[string]string{
 			"timeseries": fmt.Sprint(days),
 		})
