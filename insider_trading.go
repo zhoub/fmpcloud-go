@@ -10,11 +10,11 @@ import (
 
 // Url const for request
 const (
-	urlAPIInsiderTrading                 = "/v4/insider-trading"
-	urlAPIInsiderTradingTransactionType  = "/v4/insider-trading-transaction-type"
-	urlAPIInsiderTradingRSSFeed          = "/v4/insider-trading-rss-feed"
-	urlAPIInsiderTradingMapperCikName    = "/v4/mapper-cik-name"
-	urlAPIInsiderTradingMapperCikCompany = "/v4/mapper-cik-company/%s"
+	UrlAPIInsiderTrading                 = "/v4/insider-trading"
+	UrlAPIInsiderTradingTransactionType  = "/v4/insider-trading-transaction-type"
+	UrlAPIInsiderTradingRSSFeed          = "/v4/insider-trading-rss-feed"
+	UrlAPIInsiderTradingMapperCikName    = "/v4/mapper-cik-name"
+	UrlAPIInsiderTradingMapperCikCompany = "/v4/mapper-cik-company/%s"
 )
 
 // InsiderTrading client
@@ -51,7 +51,7 @@ func (i *InsiderTrading) List(req objects.RequestInsiderTrading) (iList []object
 
 	reqData["page"] = fmt.Sprint(req.Page)
 
-	data, err := i.Client.Get(urlAPIInsiderTrading, reqData)
+	data, err := i.Client.Get(UrlAPIInsiderTrading, reqData)
 	if err != nil {
 		return nil, err
 	}
@@ -70,7 +70,7 @@ func (i *InsiderTrading) RSSFeed(limit int64) (iList []objects.InsiderTradingRSS
 		limit = 100
 	}
 
-	data, err := i.Client.Get(urlAPIInsiderTradingRSSFeed, map[string]string{"limit": fmt.Sprint(limit)})
+	data, err := i.Client.Get(UrlAPIInsiderTradingRSSFeed, map[string]string{"limit": fmt.Sprint(limit)})
 	if err != nil {
 		return nil, err
 	}
@@ -85,7 +85,7 @@ func (i *InsiderTrading) RSSFeed(limit int64) (iList []objects.InsiderTradingRSS
 
 // TransactionType - list
 func (i *InsiderTrading) TransactionType() (tList []string, err error) {
-	data, err := i.Client.Get(urlAPIInsiderTradingTransactionType, nil)
+	data, err := i.Client.Get(UrlAPIInsiderTradingTransactionType, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -100,7 +100,7 @@ func (i *InsiderTrading) TransactionType() (tList []string, err error) {
 
 // MapperCikCompany - Company CIK mapper
 func (i *InsiderTrading) MapperCikCompany(symbol string) (iList []objects.InsiderTradingMapperCikCompany, err error) {
-	data, err := i.Client.Get(fmt.Sprintf(urlAPIInsiderTradingMapperCikCompany, symbol), nil)
+	data, err := i.Client.Get(fmt.Sprintf(UrlAPIInsiderTradingMapperCikCompany, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -120,7 +120,7 @@ func (i *InsiderTrading) MapperCikName(name *string) (iList []objects.InsiderTra
 		reqData["name"] = *name
 	}
 
-	data, err := i.Client.Get(urlAPIInsiderTradingMapperCikName, reqData)
+	data, err := i.Client.Get(UrlAPIInsiderTradingMapperCikName, reqData)
 	if err != nil {
 		return nil, err
 	}
