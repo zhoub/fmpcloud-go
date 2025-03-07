@@ -26,6 +26,7 @@ type Config struct {
 
 // APIClient ...
 type APIClient struct {
+	Revenue            *Revenue
 	Stock              *Stock
 	Forex              *Forex
 	Form13F            *Form13F
@@ -110,6 +111,7 @@ func NewAPIClient(cfg Config) (*APIClient, error) {
 		HTTPClient.retryWaitTime = &retryWaitTime
 	}
 
+	APIClient.Revenue = &Revenue{Client: HTTPClient}
 	APIClient.Stock = &Stock{Client: HTTPClient}
 	APIClient.Form13F = &Form13F{Client: HTTPClient}
 	APIClient.Forex = &Forex{Client: HTTPClient}
