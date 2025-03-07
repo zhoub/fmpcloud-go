@@ -10,11 +10,11 @@ import (
 
 // Url const for request
 const (
-	urlAPIAlternativeDataCommitmentOfTradersReportPeriod         = "/v4/commitment_of_traders_report"
-	urlAPIAlternativeDataCommitmentOfTradersReportSymbol         = "/v4/commitment_of_traders_report/%s"
-	urlAPIAlternativeDataCommitmentOfTradersReportPeriodAnalysis = "/v4/commitment_of_traders_report_analysis"
-	urlAPIAlternativeDataCommitmentOfTradersReportSymbolAnalysis = "/v4/commitment_of_traders_report_analysis/%s"
-	urlAPIAlternativeDataCommitmentOfTradersReportList           = "/v4/commitment_of_traders_report/list"
+	UrlAPIAlternativeDataCommitmentOfTradersReportPeriod         = "/v4/commitment_of_traders_report"
+	UrlAPIAlternativeDataCommitmentOfTradersReportSymbol         = "/v4/commitment_of_traders_report/%s"
+	UrlAPIAlternativeDataCommitmentOfTradersReportPeriodAnalysis = "/v4/commitment_of_traders_report_analysis"
+	UrlAPIAlternativeDataCommitmentOfTradersReportSymbolAnalysis = "/v4/commitment_of_traders_report_analysis/%s"
+	UrlAPIAlternativeDataCommitmentOfTradersReportList           = "/v4/commitment_of_traders_report/list"
 )
 
 // AlternativeData client
@@ -24,7 +24,7 @@ type AlternativeData struct {
 
 // COTSymbolList - COT Trading Symbols List
 func (a *AlternativeData) COTSymbolList() (sList []objects.COTSymbol, err error) {
-	data, err := a.Client.Get(urlAPIAlternativeDataCommitmentOfTradersReportList, nil)
+	data, err := a.Client.Get(UrlAPIAlternativeDataCommitmentOfTradersReportList, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -39,7 +39,7 @@ func (a *AlternativeData) COTSymbolList() (sList []objects.COTSymbol, err error)
 
 // COTReportBySymbol - List of reports for specific symbol
 func (a *AlternativeData) COTReportListBySymbol(symbol string) (rList []objects.COTReport, err error) {
-	data, err := a.Client.Get(fmt.Sprintf(urlAPIAlternativeDataCommitmentOfTradersReportSymbol, symbol), nil)
+	data, err := a.Client.Get(fmt.Sprintf(UrlAPIAlternativeDataCommitmentOfTradersReportSymbol, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -63,7 +63,7 @@ func (a *AlternativeData) COTReportListByPeriod(from, to *time.Time) (rList []ob
 		reqParam["to"] = to.Format("2006-01-02")
 	}
 
-	data, err := a.Client.Get(urlAPIAlternativeDataCommitmentOfTradersReportPeriod, reqParam)
+	data, err := a.Client.Get(UrlAPIAlternativeDataCommitmentOfTradersReportPeriod, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -78,7 +78,7 @@ func (a *AlternativeData) COTReportListByPeriod(from, to *time.Time) (rList []ob
 
 // COTAnalysisListBySymbol - Analysis of reports for trading symbol
 func (a *AlternativeData) COTAnalysisListBySymbol(symbol string) (aList []objects.COTAnalysis, err error) {
-	data, err := a.Client.Get(fmt.Sprintf(urlAPIAlternativeDataCommitmentOfTradersReportSymbolAnalysis, symbol), nil)
+	data, err := a.Client.Get(fmt.Sprintf(UrlAPIAlternativeDataCommitmentOfTradersReportSymbolAnalysis, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -102,7 +102,7 @@ func (a *AlternativeData) COTAnalysisListByPeriod(from, to *time.Time) (aList []
 		reqParam["to"] = to.Format("2006-01-02")
 	}
 
-	data, err := a.Client.Get(urlAPIAlternativeDataCommitmentOfTradersReportPeriodAnalysis, reqParam)
+	data, err := a.Client.Get(UrlAPIAlternativeDataCommitmentOfTradersReportPeriodAnalysis, reqParam)
 	if err != nil {
 		return nil, err
 	}
