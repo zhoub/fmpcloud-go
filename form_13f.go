@@ -10,11 +10,11 @@ import (
 
 // Url const for request
 const (
-	urlAPIForm13FList         = "/v3/cik_list"
-	urlAPIForm13FSearchByName = "/v3/cik-search/%s"
-	urlAPIForm13FGetByCik     = "/v3/cik/%s"
-	urlAPIForm13FGetThirteen  = "/v3/form-thirteen/%s"
-	urlAPIForm13FCusipMapper  = "/v3/cusip/%s"
+	UrlAPIForm13FList         = "/v3/cik_list"
+	UrlAPIForm13FSearchByName = "/v3/cik-search/%s"
+	UrlAPIForm13FGetByCik     = "/v3/cik/%s"
+	UrlAPIForm13FGetThirteen  = "/v3/form-thirteen/%s"
+	UrlAPIForm13FCusipMapper  = "/v3/cusip/%s"
 )
 
 // Form13F client
@@ -24,7 +24,7 @@ type Form13F struct {
 
 // List - 13F List
 func (f *Form13F) List() (fList []objects.Form, err error) {
-	data, err := f.Client.Get(urlAPIForm13FList, nil)
+	data, err := f.Client.Get(UrlAPIForm13FList, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -39,7 +39,7 @@ func (f *Form13F) List() (fList []objects.Form, err error) {
 
 // SearchByName - 13F cik search by name
 func (f *Form13F) SearchByName(name string) (fList []objects.Form, err error) {
-	data, err := f.Client.Get(fmt.Sprintf(urlAPIForm13FSearchByName, name), nil)
+	data, err := f.Client.Get(fmt.Sprintf(UrlAPIForm13FSearchByName, name), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -54,7 +54,7 @@ func (f *Form13F) SearchByName(name string) (fList []objects.Form, err error) {
 
 // GetCompanyByCIK - 13F get company name by cik
 func (f *Form13F) GetCompanyByCIK(cik string) (cList []objects.Form, err error) {
-	data, err := f.Client.Get(fmt.Sprintf(urlAPIForm13FGetByCik, cik), nil)
+	data, err := f.Client.Get(fmt.Sprintf(UrlAPIForm13FGetByCik, cik), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -74,7 +74,7 @@ func (f *Form13F) ThirteenList(cik string, date *time.Time) (fList []objects.Thi
 		reqParam["date"] = date.Format("2006-01-02")
 	}
 
-	data, err := f.Client.Get(fmt.Sprintf(urlAPIForm13FGetThirteen, cik), reqParam)
+	data, err := f.Client.Get(fmt.Sprintf(UrlAPIForm13FGetThirteen, cik), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (f *Form13F) ThirteenList(cik string, date *time.Time) (fList []objects.Thi
 
 // CusipMapper - Cusip mapper
 func (f *Form13F) CusipMapper(cusip string) (cList []objects.Cusip, err error) {
-	data, err := f.Client.Get(fmt.Sprintf(urlAPIForm13FCusipMapper, cusip), nil)
+	data, err := f.Client.Get(fmt.Sprintf(UrlAPIForm13FCusipMapper, cusip), nil)
 	if err != nil {
 		return nil, err
 	}
