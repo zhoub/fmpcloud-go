@@ -12,78 +12,78 @@ import (
 
 // Url const for request
 const (
-	urlAPICompanyValuationRSSFeed                          = "/v3/rss_feed"
-	urlAPICompanyValuationEarningCalendar                  = "/v3/earning_calendar"
-	urlAPICompanyValuationEarningCalendarConfirmed         = "/v4/earning-calendar-confirmed"
-	urlAPICompanyValuationEarningsSurpises                 = "/v3/earnings-surpises/%s"
-	urlAPICompanyValuationEarningCallTranscript            = "/v3/earning_call_transcript/%s"
-	urlAPICompanyValuationHistoryEarningCalendar           = "/v3/historical/earning_calendar/%s"
-	urlAPICompanyValuationIPOCalendar                      = "/v3/ipo_calendar"
-	urlAPICompanyValuationIPOCalendarConfirmed             = "/v4/ipo-calendar-confirmed"
-	urlAPICompanyValuationIPOCalendarProspectus            = "/v4/ipo-calendar-prospectus"
-	urlAPICompanyValuationSplitCalendar                    = "/v3/stock_split_calendar"
-	urlAPICompanyValuationDividendCalendar                 = "/v3/stock_dividend_calendar"
-	urlAPICompanyValuationInstituionalHolder               = "/v3/institutional-holder/%s"
-	urlAPICompanyValuationMutualFundHolder                 = "/v3/mutual-fund-holder/%s"
-	urlAPICompanyValuationETFHolder                        = "/v3/etf-holder/%s"
-	urlAPICompanyValuationETFStockExposure                 = "/v3/etf-stock-exposure/%s"
-	urlAPICompanyValuationETFSectorWeightings              = "/v3/etf-sector-weightings/%s"
-	urlAPICompanyValuationETFCountryWeightings             = "/v3/etf-country-weightings/%s"
-	urlAPICompanyValuationIncomeStatement                  = "/v3/income-statement/%s"
-	urlAPICompanyValuationIncomeStatementGrowth            = "/v3/income-statement-growth/%s"
-	urlAPICompanyValuationBulkIncomeStatement              = "/v4/income-statement-bulk"
-	urlAPICompanyValuationBulkBalanceSheetStatement        = "/v4/balance-sheet-statement-bulk"
-	urlAPICompanyValuationBulkCashFlowStatement            = "/v4/cash-flow-statement-bulk"
-	urlAPICompanyValuationBulkRatios                       = "/v4/ratios-bulk"
-	urlAPICompanyValuationBulkKeyMetrics                   = "/v4/key-metrics-bulk"
-	urlAPICompanyValuationBulkEarningsSurpises             = "/v4/earnings-surprises-bulk"
-	urlAPICompanyValuationBulkRating                       = "/v4/rating-bulk"
-	urlAPICompanyValuationBulkScores                       = "/v4/scores-bulk"
-	urlAPICompanyValuationBalanceSheetStatement            = "/v3/balance-sheet-statement/%s"
-	urlAPICompanyValuationBalanceSheetStatementGrowth      = "/v3/balance-sheet-statement-growth/%s"
-	urlAPICompanyValuationCashFlowStatement                = "/v3/cash-flow-statement/%s"
-	urlAPICompanyValuationCashFlowStatementGrowth          = "/v3/cash-flow-statement-growth/%s"
-	urlAPICompanyValuationIncomeStatementAsReported        = "/v3/income-statement-as-reported/%s"
-	urlAPICompanyValuationBalanceSheetStatementAsReported  = "/v3/balance-sheet-statement-as-reported/%s"
-	urlAPICompanyValuationCashFlowStatementAsReported      = "/v3/cash-flow-statement-as-reported/%s"
-	urlAPICompanyValuationFinancialStatementFullAsReported = "/v3/financial-statement-full-as-reported/%s"
-	urlAPICompanyValuationFinancialRatios                  = "/v3/ratios/%s"
-	urlAPICompanyValuationFinancialRatiosTTM               = "/v3/ratios-ttm/%s"
-	urlAPICompanyValuationKeyMetrics                       = "/v3/key-metrics/%s"
-	urlAPICompanyValuationKeyMetricsTTM                    = "/v3/key-metrics-ttm/%s"
-	urlAPICompanyValuationEnterpriseValues                 = "/v3/enterprise-values/%s"
-	urlAPICompanyValuationFinancialGrowth                  = "/v3/financial-growth/%s"
-	urlAPICompanyValuationDiscountedCashFlow               = "/v3/discounted-cash-flow/%s"
-	urlAPICompanyValuationHistoryDailyDiscountedCashFlow   = "/v3/historical-daily-discounted-cash-flow/%s"
-	urlAPICompanyValuationHistoryDiscountedCashFlow        = "/v3/historical-discounted-cash-flow-statement/%s"
-	urlAPICompanyValuationRating                           = "/v3/rating/%s"
-	urlAPICompanyValuationHistoryRating                    = "/v3/historical-rating/%s"
-	urlAPICompanyValuationMarketCapitalization             = "/v3/market-capitalization/%s"
-	urlAPICompanyValuationHistoryMarketCapitalization      = "/v3/historical-market-capitalization/%s"
-	urlAPICompanyValuationDelistedCompanyList              = "/v3/delisted-companies"
-	urlAPICompanyValuationStockNews                        = "/v3/stock_news"
-	urlAPICompanyValuationStockScreener                    = "/v3/stock-screener"
-	urlAPICompanyValuationAnalystEstimates                 = "/v3/analyst-estimates/%s"
-	urlAPICompanyValuationAnalystStockRecommendations      = "/v3/analyst-stock-recommendations/%s"
-	urlAPICompanyValuationGrade                            = "/v3/grade/%s"
-	urlAPICompanyValuationPressReleases                    = "/v3/press-releases/%s"
-	urlAPICompanyValuationFinancialStatementsList          = "/v3/financial-statement-symbol-lists"
-	urlAPICompanyValuationEconomicCalendarEventList        = "/v3/economic_calendar_event_list"
-	urlAPICompanyValuationEconomicCalendar                 = "/v3/economic_calendar"
-	urlAPICompanyValuationHistoryEconomicCalendar          = "/v3/historical/economic_calendar/%s"
-	urlAPICompanyValuationSECFillings                      = "/v3/sec_filings/%s"
-	urlAPICompanyValuationETFList                          = "/v3/etf/list"
-	urlAPICompanyValuationAvailableTradedList              = "/v3/available-traded/list"
-	urlAPICompanyValuationCompanyOutlook                   = "/v4/company-outlook"
-	urlAPICompanyValuationEmployeeCount                    = "/v4/employee_count"
-	urlAPICompanyValuationSocialSentimentTrending          = "/v4/social-sentiment/trending"
-	urlAPICompanyValuationSocialSentimentChange            = "/v4/social-sentiments/change"
-	urlAPICompanyValuationHistoricalSocialSentiment        = "/v4/historical/social-sentiment"
-	urlAPICompanyValuationScore                            = "/v4/score"
-	urlAPICompanyValuationSharesFloat                      = "/v4/shares_float"
-	urlAPICompanyValuationSharesFloatAll                   = "/v4/shares_float/all"
-	urlAPICompanyValuationRatiosTTMBulk                    = "/v4/ratios-ttm-bulk"
-	urlAPICompanyValuationDCFBulk                          = "/v4/dcf-bulk"
+	UrlAPICompanyValuationRSSFeed                          = "/v3/rss_feed"
+	UrlAPICompanyValuationEarningCalendar                  = "/v3/earning_calendar"
+	UrlAPICompanyValuationEarningCalendarConfirmed         = "/v4/earning-calendar-confirmed"
+	UrlAPICompanyValuationEarningsSurpises                 = "/v3/earnings-surpises/%s"
+	UrlAPICompanyValuationEarningCallTranscript            = "/v3/earning_call_transcript/%s"
+	UrlAPICompanyValuationHistoryEarningCalendar           = "/v3/historical/earning_calendar/%s"
+	UrlAPICompanyValuationIPOCalendar                      = "/v3/ipo_calendar"
+	UrlAPICompanyValuationIPOCalendarConfirmed             = "/v4/ipo-calendar-confirmed"
+	UrlAPICompanyValuationIPOCalendarProspectus            = "/v4/ipo-calendar-prospectus"
+	UrlAPICompanyValuationSplitCalendar                    = "/v3/stock_split_calendar"
+	UrlAPICompanyValuationDividendCalendar                 = "/v3/stock_dividend_calendar"
+	UrlAPICompanyValuationInstituionalHolder               = "/v3/institutional-holder/%s"
+	UrlAPICompanyValuationMutualFundHolder                 = "/v3/mutual-fund-holder/%s"
+	UrlAPICompanyValuationETFHolder                        = "/v3/etf-holder/%s"
+	UrlAPICompanyValuationETFStockExposure                 = "/v3/etf-stock-exposure/%s"
+	UrlAPICompanyValuationETFSectorWeightings              = "/v3/etf-sector-weightings/%s"
+	UrlAPICompanyValuationETFCountryWeightings             = "/v3/etf-country-weightings/%s"
+	UrlAPICompanyValuationIncomeStatement                  = "/v3/income-statement/%s"
+	UrlAPICompanyValuationIncomeStatementGrowth            = "/v3/income-statement-growth/%s"
+	UrlAPICompanyValuationBulkIncomeStatement              = "/v4/income-statement-bulk"
+	UrlAPICompanyValuationBulkBalanceSheetStatement        = "/v4/balance-sheet-statement-bulk"
+	UrlAPICompanyValuationBulkCashFlowStatement            = "/v4/cash-flow-statement-bulk"
+	UrlAPICompanyValuationBulkRatios                       = "/v4/ratios-bulk"
+	UrlAPICompanyValuationBulkKeyMetrics                   = "/v4/key-metrics-bulk"
+	UrlAPICompanyValuationBulkEarningsSurpises             = "/v4/earnings-surprises-bulk"
+	UrlAPICompanyValuationBulkRating                       = "/v4/rating-bulk"
+	UrlAPICompanyValuationBulkScores                       = "/v4/scores-bulk"
+	UrlAPICompanyValuationBalanceSheetStatement            = "/v3/balance-sheet-statement/%s"
+	UrlAPICompanyValuationBalanceSheetStatementGrowth      = "/v3/balance-sheet-statement-growth/%s"
+	UrlAPICompanyValuationCashFlowStatement                = "/v3/cash-flow-statement/%s"
+	UrlAPICompanyValuationCashFlowStatementGrowth          = "/v3/cash-flow-statement-growth/%s"
+	UrlAPICompanyValuationIncomeStatementAsReported        = "/v3/income-statement-as-reported/%s"
+	UrlAPICompanyValuationBalanceSheetStatementAsReported  = "/v3/balance-sheet-statement-as-reported/%s"
+	UrlAPICompanyValuationCashFlowStatementAsReported      = "/v3/cash-flow-statement-as-reported/%s"
+	UrlAPICompanyValuationFinancialStatementFullAsReported = "/v3/financial-statement-full-as-reported/%s"
+	UrlAPICompanyValuationFinancialRatios                  = "/v3/ratios/%s"
+	UrlAPICompanyValuationFinancialRatiosTTM               = "/v3/ratios-ttm/%s"
+	UrlAPICompanyValuationKeyMetrics                       = "/v3/key-metrics/%s"
+	UrlAPICompanyValuationKeyMetricsTTM                    = "/v3/key-metrics-ttm/%s"
+	UrlAPICompanyValuationEnterpriseValues                 = "/v3/enterprise-values/%s"
+	UrlAPICompanyValuationFinancialGrowth                  = "/v3/financial-growth/%s"
+	UrlAPICompanyValuationDiscountedCashFlow               = "/v3/discounted-cash-flow/%s"
+	UrlAPICompanyValuationHistoryDailyDiscountedCashFlow   = "/v3/historical-daily-discounted-cash-flow/%s"
+	UrlAPICompanyValuationHistoryDiscountedCashFlow        = "/v3/historical-discounted-cash-flow-statement/%s"
+	UrlAPICompanyValuationRating                           = "/v3/rating/%s"
+	UrlAPICompanyValuationHistoryRating                    = "/v3/historical-rating/%s"
+	UrlAPICompanyValuationMarketCapitalization             = "/v3/market-capitalization/%s"
+	UrlAPICompanyValuationHistoryMarketCapitalization      = "/v3/historical-market-capitalization/%s"
+	UrlAPICompanyValuationDelistedCompanyList              = "/v3/delisted-companies"
+	UrlAPICompanyValuationStockNews                        = "/v3/stock_news"
+	UrlAPICompanyValuationStockScreener                    = "/v3/stock-screener"
+	UrlAPICompanyValuationAnalystEstimates                 = "/v3/analyst-estimates/%s"
+	UrlAPICompanyValuationAnalystStockRecommendations      = "/v3/analyst-stock-recommendations/%s"
+	UrlAPICompanyValuationGrade                            = "/v3/grade/%s"
+	UrlAPICompanyValuationPressReleases                    = "/v3/press-releases/%s"
+	UrlAPICompanyValuationFinancialStatementsList          = "/v3/financial-statement-symbol-lists"
+	UrlAPICompanyValuationEconomicCalendarEventList        = "/v3/economic_calendar_event_list"
+	UrlAPICompanyValuationEconomicCalendar                 = "/v3/economic_calendar"
+	UrlAPICompanyValuationHistoryEconomicCalendar          = "/v3/historical/economic_calendar/%s"
+	UrlAPICompanyValuationSECFillings                      = "/v3/sec_filings/%s"
+	UrlAPICompanyValuationETFList                          = "/v3/etf/list"
+	UrlAPICompanyValuationAvailableTradedList              = "/v3/available-traded/list"
+	UrlAPICompanyValuationCompanyOutlook                   = "/v4/company-outlook"
+	UrlAPICompanyValuationEmployeeCount                    = "/v4/employee_count"
+	UrlAPICompanyValuationSocialSentimentTrending          = "/v4/social-sentiment/trending"
+	UrlAPICompanyValuationSocialSentimentChange            = "/v4/social-sentiments/change"
+	UrlAPICompanyValuationHistoricalSocialSentiment        = "/v4/historical/social-sentiment"
+	UrlAPICompanyValuationScore                            = "/v4/score"
+	UrlAPICompanyValuationSharesFloat                      = "/v4/shares_float"
+	UrlAPICompanyValuationSharesFloatAll                   = "/v4/shares_float/all"
+	UrlAPICompanyValuationRatiosTTMBulk                    = "/v4/ratios-ttm-bulk"
+	UrlAPICompanyValuationDCFBulk                          = "/v4/dcf-bulk"
 )
 
 // CompanyValuation client
@@ -93,7 +93,7 @@ type CompanyValuation struct {
 
 // RssFeed - SEC RSS feeds is a very helpful resource for staying current on the most recent financial statements posted on the SEC
 func (c *CompanyValuation) RssFeed() (fList []objects.RssFeed, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationRSSFeed, nil)
+	data, err := c.Client.Get(UrlAPICompanyValuationRSSFeed, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -117,7 +117,7 @@ func (c *CompanyValuation) EarningCalendar(from, to *time.Time) (eList []objects
 		reqParam["to"] = to.Format("2006-01-02")
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationEarningCalendar, reqParam)
+	data, err := c.Client.Get(UrlAPICompanyValuationEarningCalendar, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -141,7 +141,7 @@ func (c *CompanyValuation) EarningCalendarConfirmed(from, to *time.Time) (eList 
 		reqParam["to"] = to.Format("2006-01-02")
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationEarningCalendarConfirmed, reqParam)
+	data, err := c.Client.Get(UrlAPICompanyValuationEarningCalendarConfirmed, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -156,7 +156,7 @@ func (c *CompanyValuation) EarningCalendarConfirmed(from, to *time.Time) (eList 
 
 // EarningSurpriseList ...
 func (c *CompanyValuation) EarningSurpriseList(symbol string) (eList []objects.EarningSurprise, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationEarningsSurpises, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationEarningsSurpises, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -172,7 +172,7 @@ func (c *CompanyValuation) EarningSurpriseList(symbol string) (eList []objects.E
 // EarningCallTranscript - transcript of specific earning
 func (c *CompanyValuation) EarningCallTranscript(req objects.RequestEarningCallTranscript) (tList []objects.EarningCallTranscript, err error) {
 	data, err := c.Client.Get(
-		fmt.Sprintf(urlAPICompanyValuationEarningCallTranscript, req.Symbol),
+		fmt.Sprintf(UrlAPICompanyValuationEarningCallTranscript, req.Symbol),
 		map[string]string{
 			"quarter": fmt.Sprint(req.Quarter),
 			"year":    fmt.Sprint(req.Year),
@@ -191,7 +191,7 @@ func (c *CompanyValuation) EarningCallTranscript(req objects.RequestEarningCallT
 
 // HistoryEarningCalendar - historical earning calendar
 func (c *CompanyValuation) HistoryEarningCalendar(symbol string) (eList []objects.EarningCalendar, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationHistoryEarningCalendar, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationHistoryEarningCalendar, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -215,7 +215,7 @@ func (c *CompanyValuation) IPOCalendar(from, to *time.Time) (ipoList []objects.I
 		reqParam["to"] = to.Format("2006-01-02")
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationIPOCalendar, reqParam)
+	data, err := c.Client.Get(UrlAPICompanyValuationIPOCalendar, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -239,7 +239,7 @@ func (c *CompanyValuation) IPOCalendarConfirmed(from, to *time.Time) (ipoList []
 		reqParam["to"] = to.Format("2006-01-02")
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationIPOCalendarConfirmed, reqParam)
+	data, err := c.Client.Get(UrlAPICompanyValuationIPOCalendarConfirmed, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -263,7 +263,7 @@ func (c *CompanyValuation) IPOCalendarProspectus(from, to *time.Time) (ipoList [
 		reqParam["to"] = to.Format("2006-01-02")
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationIPOCalendarProspectus, reqParam)
+	data, err := c.Client.Get(UrlAPICompanyValuationIPOCalendarProspectus, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -287,7 +287,7 @@ func (c *CompanyValuation) SplitCalendar(from, to *time.Time) (sList []objects.S
 		reqParam["to"] = to.Format("2006-01-02")
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationSplitCalendar, reqParam)
+	data, err := c.Client.Get(UrlAPICompanyValuationSplitCalendar, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -311,7 +311,7 @@ func (c *CompanyValuation) DividendCalendar(from, to *time.Time) (dList []object
 		reqParam["to"] = to.Format("2006-01-02")
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationDividendCalendar, reqParam)
+	data, err := c.Client.Get(UrlAPICompanyValuationDividendCalendar, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -326,7 +326,7 @@ func (c *CompanyValuation) DividendCalendar(from, to *time.Time) (dList []object
 
 // InstitutionalHolders - institutional holders
 func (c *CompanyValuation) InstitutionalHolders(symbol string) (hList []objects.InstitutionalHolder, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationInstituionalHolder, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationInstituionalHolder, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -341,7 +341,7 @@ func (c *CompanyValuation) InstitutionalHolders(symbol string) (hList []objects.
 
 // MutualFundHolders - mutual fund holders
 func (c *CompanyValuation) MutualFundHolders(symbol string) (hList []objects.MutualFundHolder, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationMutualFundHolder, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationMutualFundHolder, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -356,7 +356,7 @@ func (c *CompanyValuation) MutualFundHolders(symbol string) (hList []objects.Mut
 
 // ETFHolders - ETF holders
 func (c *CompanyValuation) ETFHolders(symbol string) (hList []objects.ETFHolder, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationETFHolder, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationETFHolder, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -371,7 +371,7 @@ func (c *CompanyValuation) ETFHolders(symbol string) (hList []objects.ETFHolder,
 
 // ETFStockExposure - ETF stock exposure
 func (c *CompanyValuation) ETFStockExposure(symbol string) (eList []objects.ETFStockExposure, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationETFStockExposure, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationETFStockExposure, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -386,7 +386,7 @@ func (c *CompanyValuation) ETFStockExposure(symbol string) (eList []objects.ETFS
 
 // ETFSectorWeightings - ETF sector weightings
 func (c *CompanyValuation) ETFSectorWeightings(symbol string) (sList []objects.ETFSectorWeighting, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationETFSectorWeightings, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationETFSectorWeightings, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -401,7 +401,7 @@ func (c *CompanyValuation) ETFSectorWeightings(symbol string) (sList []objects.E
 
 // ETFCountryWeightings - ETF country weightings
 func (c *CompanyValuation) ETFCountryWeightings(symbol string) (cList []objects.ETFCountryWeighting, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationETFCountryWeightings, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationETFCountryWeightings, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -421,7 +421,7 @@ func (c *CompanyValuation) IncomeStatement(req objects.RequestIncomeStatement) (
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationIncomeStatement, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationIncomeStatement, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -441,7 +441,7 @@ func (c *CompanyValuation) IncomeStatementGrowth(req objects.RequestIncomeStatem
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationIncomeStatementGrowth, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationIncomeStatementGrowth, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -461,7 +461,7 @@ func (c *CompanyValuation) BalanceSheetStatement(req objects.RequestBalanceSheet
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationBalanceSheetStatement, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationBalanceSheetStatement, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -481,7 +481,7 @@ func (c *CompanyValuation) BalanceSheetStatementGrowth(req objects.RequestBalanc
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationBalanceSheetStatementGrowth, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationBalanceSheetStatementGrowth, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -501,7 +501,7 @@ func (c *CompanyValuation) CashFlowStatement(req objects.RequestCashFlowStatemen
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationCashFlowStatement, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationCashFlowStatement, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -521,7 +521,7 @@ func (c *CompanyValuation) CashFlowStatementGrowth(req objects.RequestCashFlowSt
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationCashFlowStatementGrowth, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationCashFlowStatementGrowth, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -541,7 +541,7 @@ func (c *CompanyValuation) IncomeStatementAsReported(req objects.RequestIncomeSt
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationIncomeStatementAsReported, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationIncomeStatementAsReported, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -561,7 +561,7 @@ func (c *CompanyValuation) BalanceSheetStatementAsReported(req objects.RequestBa
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationBalanceSheetStatementAsReported, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationBalanceSheetStatementAsReported, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -581,7 +581,7 @@ func (c *CompanyValuation) CashFlowStatementAsReported(req objects.RequestCashFl
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationCashFlowStatementAsReported, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationCashFlowStatementAsReported, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -601,7 +601,7 @@ func (c *CompanyValuation) FullFinancialStatementAsReported(req objects.RequestF
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationFinancialStatementFullAsReported, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationFinancialStatementFullAsReported, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -621,7 +621,7 @@ func (c *CompanyValuation) FinancialRatios(req objects.RequestFinancialRatios) (
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationFinancialRatios, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationFinancialRatios, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -636,7 +636,7 @@ func (c *CompanyValuation) FinancialRatios(req objects.RequestFinancialRatios) (
 
 // FinancialRatiosTTM - financial ratios TTM
 func (c *CompanyValuation) FinancialRatiosTTM(symbol string) (rList []objects.FinancialRatiosTTM, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationFinancialRatiosTTM, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationFinancialRatiosTTM, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -656,7 +656,7 @@ func (c *CompanyValuation) KeyMetrics(req objects.RequestKeyMetrics) (mList []ob
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationKeyMetrics, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationKeyMetrics, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -671,7 +671,7 @@ func (c *CompanyValuation) KeyMetrics(req objects.RequestKeyMetrics) (mList []ob
 
 // KeyMetricsTTM - key metrics ttm
 func (c *CompanyValuation) KeyMetricsTTM(symbol string) (mList []objects.KeyMetricsTTM, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationKeyMetricsTTM, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationKeyMetricsTTM, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -691,7 +691,7 @@ func (c *CompanyValuation) EnterpriseValue(req objects.RequestEnterpriseValue) (
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationEnterpriseValues, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationEnterpriseValues, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -723,7 +723,7 @@ func (c *CompanyValuation) FinancialStatementsGrowth(req objects.RequestFinancia
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationFinancialGrowth, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationFinancialGrowth, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -738,7 +738,7 @@ func (c *CompanyValuation) FinancialStatementsGrowth(req objects.RequestFinancia
 
 // DiscountedCashFlow - discounted cash flow value
 func (c *CompanyValuation) DiscountedCashFlow(symbol string) (vList []objects.DiscountedCashFlow, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationDiscountedCashFlow, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationDiscountedCashFlow, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -754,7 +754,7 @@ func (c *CompanyValuation) DiscountedCashFlow(symbol string) (vList []objects.Di
 // DailyDiscountedCashFlow - daily historical DCF
 func (c *CompanyValuation) DailyDiscountedCashFlow(req objects.RequestDailyDiscountedCashFlow) (vList []objects.DailyDiscountedCashFlow, err error) {
 	data, err := c.Client.Get(
-		fmt.Sprintf(urlAPICompanyValuationHistoryDailyDiscountedCashFlow, req.Symbol),
+		fmt.Sprintf(UrlAPICompanyValuationHistoryDailyDiscountedCashFlow, req.Symbol),
 		map[string]string{"limit": fmt.Sprint(req.Limit)},
 	)
 	if err != nil {
@@ -776,7 +776,7 @@ func (c *CompanyValuation) HistoryDiscountedCashFlow(req objects.RequestHistoryD
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationHistoryDiscountedCashFlow, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationHistoryDiscountedCashFlow, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -791,7 +791,7 @@ func (c *CompanyValuation) HistoryDiscountedCashFlow(req objects.RequestHistoryD
 
 // Rating - get rating by symbol
 func (c *CompanyValuation) Rating(symbol string) (rList []objects.Rating, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationRating, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationRating, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -807,7 +807,7 @@ func (c *CompanyValuation) Rating(symbol string) (rList []objects.Rating, err er
 // DailyHistoryRating - daily historical rating
 func (c *CompanyValuation) DailyHistoryRating(req objects.RequestRating) (rList []objects.Rating, err error) {
 	data, err := c.Client.Get(
-		fmt.Sprintf(urlAPICompanyValuationHistoryRating, req.Symbol),
+		fmt.Sprintf(UrlAPICompanyValuationHistoryRating, req.Symbol),
 		map[string]string{"limit": fmt.Sprint(req.Limit)},
 	)
 	if err != nil {
@@ -824,7 +824,7 @@ func (c *CompanyValuation) DailyHistoryRating(req objects.RequestRating) (rList 
 
 // MarketCapitalization - market capitalization
 func (c *CompanyValuation) MarketCapitalization(symbol string) (rList []objects.MarketCapitalization, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationMarketCapitalization, symbol), nil)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationMarketCapitalization, symbol), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -840,7 +840,7 @@ func (c *CompanyValuation) MarketCapitalization(symbol string) (rList []objects.
 // DailyHistoryMarketCapitalization - daily historical market capitalization
 func (c *CompanyValuation) DailyHistoryMarketCapitalization(req objects.RequestMarketCapitalization) (rList []objects.MarketCapitalization, err error) {
 	data, err := c.Client.Get(
-		fmt.Sprintf(urlAPICompanyValuationHistoryMarketCapitalization, req.Symbol),
+		fmt.Sprintf(UrlAPICompanyValuationHistoryMarketCapitalization, req.Symbol),
 		map[string]string{"limit": fmt.Sprint(req.Limit)},
 	)
 	if err != nil {
@@ -922,7 +922,7 @@ func (c *CompanyValuation) StockScreener(req objects.RequestStockScreener) (sLis
 		reqParam["country"] = *req.Country
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationStockScreener, reqParam)
+	data, err := c.Client.Get(UrlAPICompanyValuationStockScreener, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -938,7 +938,7 @@ func (c *CompanyValuation) StockScreener(req objects.RequestStockScreener) (sLis
 // DelstedCompanies - delsted companies
 func (c *CompanyValuation) DelstedCompanies(limit int64) (cList []objects.DelstedCompany, err error) {
 	data, err := c.Client.Get(
-		urlAPICompanyValuationDelistedCompanyList,
+		UrlAPICompanyValuationDelistedCompanyList,
 		map[string]string{"limit": fmt.Sprint(limit)},
 	)
 	if err != nil {
@@ -960,7 +960,7 @@ func (c *CompanyValuation) StockNews(req objects.RequestStockNews) (vList []obje
 		reqParam["tickers"] = strings.Join(req.SymbolList, ",")
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationStockNews, reqParam)
+	data, err := c.Client.Get(UrlAPICompanyValuationStockNews, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -980,7 +980,7 @@ func (c *CompanyValuation) AnalystEstimates(req objects.RequestAnalystEstimates)
 		reqParam["period"] = string(objects.CompanyValuationPeriodQuarter)
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationAnalystEstimates, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationAnalystEstimates, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -996,7 +996,7 @@ func (c *CompanyValuation) AnalystEstimates(req objects.RequestAnalystEstimates)
 // Grade - stock grade from analysts
 func (c *CompanyValuation) Grade(req objects.RequestGrade) (gList []objects.Grade, err error) {
 	data, err := c.Client.Get(
-		fmt.Sprintf(urlAPICompanyValuationGrade, req.Symbol),
+		fmt.Sprintf(UrlAPICompanyValuationGrade, req.Symbol),
 		map[string]string{"limit": fmt.Sprint(req.Limit)},
 	)
 	if err != nil {
@@ -1014,7 +1014,7 @@ func (c *CompanyValuation) Grade(req objects.RequestGrade) (gList []objects.Grad
 // AnalystStockRecommendations - monthly stock analyst ratings
 func (c *CompanyValuation) AnalystStockRecommendations(req objects.RequestAnalystStockRecommendations) (rList []objects.AnalystStockRecommendations, err error) {
 	data, err := c.Client.Get(
-		fmt.Sprintf(urlAPICompanyValuationAnalystStockRecommendations, req.Symbol),
+		fmt.Sprintf(UrlAPICompanyValuationAnalystStockRecommendations, req.Symbol),
 		map[string]string{"limit": fmt.Sprint(req.Limit)},
 	)
 	if err != nil {
@@ -1032,7 +1032,7 @@ func (c *CompanyValuation) AnalystStockRecommendations(req objects.RequestAnalys
 // PressReleases - stock press releases
 func (c *CompanyValuation) PressReleases(req objects.RequestPressReleases) (prList []objects.PressReleases, err error) {
 	data, err := c.Client.Get(
-		fmt.Sprintf(urlAPICompanyValuationPressReleases, req.Symbol),
+		fmt.Sprintf(UrlAPICompanyValuationPressReleases, req.Symbol),
 		map[string]string{"limit": fmt.Sprint(req.Limit)},
 	)
 	if err != nil {
@@ -1049,7 +1049,7 @@ func (c *CompanyValuation) PressReleases(req objects.RequestPressReleases) (prLi
 
 // FinancialStatementList - List of symbols that have financial statements
 func (c *CompanyValuation) FinancialStatementList() (fsList []string, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationFinancialStatementsList, nil)
+	data, err := c.Client.Get(UrlAPICompanyValuationFinancialStatementsList, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -1073,7 +1073,7 @@ func (c *CompanyValuation) EconomicCalendar(req objects.RequestEconomicCalendar)
 		reqParam["to"] = req.To.Format("2006-01-02")
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationEconomicCalendar, reqParam)
+	data, err := c.Client.Get(UrlAPICompanyValuationEconomicCalendar, reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -1093,7 +1093,7 @@ func (c *CompanyValuation) SECFilings(req objects.RequestSECFilings) (eList []ob
 		reqParam["type"] = *req.Type
 	}
 
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationSECFillings, req.Symbol), reqParam)
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationSECFillings, req.Symbol), reqParam)
 	if err != nil {
 		return nil, err
 	}
@@ -1108,7 +1108,7 @@ func (c *CompanyValuation) SECFilings(req objects.RequestSECFilings) (eList []ob
 
 // HistoryEconomicCalendar - Economic calendar event list
 func (c *CompanyValuation) HistoryEconomicCalendar(req objects.RequestHistoryEconomicCalendar) (hList []objects.HistoryEconomicCalendar, err error) {
-	data, err := c.Client.Get(fmt.Sprintf(urlAPICompanyValuationHistoryEconomicCalendar, req.Event), map[string]string{"country": req.Country})
+	data, err := c.Client.Get(fmt.Sprintf(UrlAPICompanyValuationHistoryEconomicCalendar, req.Event), map[string]string{"country": req.Country})
 	if err != nil {
 		return nil, err
 	}
@@ -1123,7 +1123,7 @@ func (c *CompanyValuation) HistoryEconomicCalendar(req objects.RequestHistoryEco
 
 // EconomicCalendarEventList - Example of historical consumer sentiment in U.S. (take event name and country from event list endpoint)
 func (c *CompanyValuation) EconomicCalendarEventList() (eList []objects.EconomicCalendarEventList, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationEconomicCalendarEventList, nil)
+	data, err := c.Client.Get(UrlAPICompanyValuationEconomicCalendarEventList, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -1138,7 +1138,7 @@ func (c *CompanyValuation) EconomicCalendarEventList() (eList []objects.Economic
 
 // ETFList - All ETF symbols
 func (c *CompanyValuation) ETFList() (fList []objects.ETF, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationETFList, nil)
+	data, err := c.Client.Get(UrlAPICompanyValuationETFList, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -1153,7 +1153,7 @@ func (c *CompanyValuation) ETFList() (fList []objects.ETF, err error) {
 
 // AvailableTradedList - All tradable Symbols
 func (c *CompanyValuation) AvailableTradedList() (fList []objects.AvailableTraded, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationAvailableTradedList, nil)
+	data, err := c.Client.Get(UrlAPICompanyValuationAvailableTradedList, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -1168,7 +1168,7 @@ func (c *CompanyValuation) AvailableTradedList() (fList []objects.AvailableTrade
 
 // CompanyOutlook - Company Outlook
 func (c *CompanyValuation) CompanyOutlook(symbol string) (co *objects.CompanyOutlook, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationCompanyOutlook, map[string]string{"symbol": symbol})
+	data, err := c.Client.Get(UrlAPICompanyValuationCompanyOutlook, map[string]string{"symbol": symbol})
 	if err != nil {
 		return nil, err
 	}
@@ -1183,7 +1183,7 @@ func (c *CompanyValuation) CompanyOutlook(symbol string) (co *objects.CompanyOut
 
 // EmployeeCount - Historical number of employees
 func (c *CompanyValuation) EmployeeCount(symbol string) (eList *objects.EmployeeCount, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationEmployeeCount, map[string]string{"symbol": symbol})
+	data, err := c.Client.Get(UrlAPICompanyValuationEmployeeCount, map[string]string{"symbol": symbol})
 	if err != nil {
 		return nil, err
 	}
@@ -1207,7 +1207,7 @@ func (c *CompanyValuation) SocialSentimentTrending(tType, source string) (sList 
 		req["source"] = source
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationSocialSentimentTrending, req)
+	data, err := c.Client.Get(UrlAPICompanyValuationSocialSentimentTrending, req)
 	if err != nil {
 		return nil, err
 	}
@@ -1231,7 +1231,7 @@ func (c *CompanyValuation) SocialSentimentChange(tType, source string) (sList []
 		req["source"] = source
 	}
 
-	data, err := c.Client.Get(urlAPICompanyValuationSocialSentimentChange, req)
+	data, err := c.Client.Get(UrlAPICompanyValuationSocialSentimentChange, req)
 	if err != nil {
 		return nil, err
 	}
@@ -1246,7 +1246,7 @@ func (c *CompanyValuation) SocialSentimentChange(tType, source string) (sList []
 
 // HistoricalSocialSentiment - Historical Social Media sentiment for stock (time in UTC)
 func (c *CompanyValuation) HistoricalSocialSentiment(symbol string) (sList []objects.SocialSentiment, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationHistoricalSocialSentiment, map[string]string{"symbol": symbol})
+	data, err := c.Client.Get(UrlAPICompanyValuationHistoricalSocialSentiment, map[string]string{"symbol": symbol})
 	if err != nil {
 		return nil, err
 	}
@@ -1261,7 +1261,7 @@ func (c *CompanyValuation) HistoricalSocialSentiment(symbol string) (sList []obj
 
 // Score - Stock Financial scores
 func (c *CompanyValuation) Score(symbol string) (sList []objects.Score, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationScore, map[string]string{"symbol": symbol})
+	data, err := c.Client.Get(UrlAPICompanyValuationScore, map[string]string{"symbol": symbol})
 	if err != nil {
 		return nil, err
 	}
@@ -1276,7 +1276,7 @@ func (c *CompanyValuation) Score(symbol string) (sList []objects.Score, err erro
 
 // BulkScores - Stock Financial scores (bulk)
 func (c *CompanyValuation) BulkScores() (sList []objects.Score, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationBulkScores, nil)
+	data, err := c.Client.Get(UrlAPICompanyValuationBulkScores, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -1292,7 +1292,7 @@ func (c *CompanyValuation) BulkScores() (sList []objects.Score, err error) {
 // BulkIncomeStatement ...
 func (c *CompanyValuation) BulkIncomeStatement(year int, period string) (pList []objects.IncomeStatement, err error) {
 	data, err := c.Client.Get(
-		urlAPICompanyValuationBulkIncomeStatement,
+		UrlAPICompanyValuationBulkIncomeStatement,
 		map[string]string{
 			"year":   fmt.Sprint(year),
 			"period": period,
@@ -1312,7 +1312,7 @@ func (c *CompanyValuation) BulkIncomeStatement(year int, period string) (pList [
 // BulkBalanceSheetStatement ...
 func (c *CompanyValuation) BulkBalanceSheetStatement(year int, period string) (sList []objects.BalanceSheetStatement, err error) {
 	data, err := c.Client.Get(
-		urlAPICompanyValuationBulkBalanceSheetStatement,
+		UrlAPICompanyValuationBulkBalanceSheetStatement,
 		map[string]string{
 			"year":   fmt.Sprint(year),
 			"period": period,
@@ -1332,7 +1332,7 @@ func (c *CompanyValuation) BulkBalanceSheetStatement(year int, period string) (s
 // BulkCashFlowStatement ...
 func (c *CompanyValuation) BulkCashFlowStatement(year int, period string) (sList []objects.CashFlowStatement, err error) {
 	data, err := c.Client.Get(
-		urlAPICompanyValuationBulkCashFlowStatement,
+		UrlAPICompanyValuationBulkCashFlowStatement,
 		map[string]string{
 			"year":   fmt.Sprint(year),
 			"period": period,
@@ -1352,7 +1352,7 @@ func (c *CompanyValuation) BulkCashFlowStatement(year int, period string) (sList
 // BulkCashFlowStatement ...
 func (c *CompanyValuation) BulkKeyMetrics(year int, period string) (sList []objects.KeyMetrics, err error) {
 	data, err := c.Client.Get(
-		urlAPICompanyValuationBulkKeyMetrics,
+		UrlAPICompanyValuationBulkKeyMetrics,
 		map[string]string{
 			"year":   fmt.Sprint(year),
 			"period": period,
@@ -1372,7 +1372,7 @@ func (c *CompanyValuation) BulkKeyMetrics(year int, period string) (sList []obje
 // BulkRatios ...
 func (c *CompanyValuation) BulkRatios(year int, period string) (sList []objects.FinancialRatios, err error) {
 	data, err := c.Client.Get(
-		urlAPICompanyValuationBulkRatios,
+		UrlAPICompanyValuationBulkRatios,
 		map[string]string{
 			"year":   fmt.Sprint(year),
 			"period": period,
@@ -1391,7 +1391,7 @@ func (c *CompanyValuation) BulkRatios(year int, period string) (sList []objects.
 
 // BulkEarningsSurpises ...
 func (c *CompanyValuation) BulkEarningsSurpises(year int) (sList []objects.EarningSurprise, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationBulkEarningsSurpises, map[string]string{"year": fmt.Sprint(year)})
+	data, err := c.Client.Get(UrlAPICompanyValuationBulkEarningsSurpises, map[string]string{"year": fmt.Sprint(year)})
 	if err != nil {
 		return nil, err
 	}
@@ -1406,7 +1406,7 @@ func (c *CompanyValuation) BulkEarningsSurpises(year int) (sList []objects.Earni
 
 // BulkRating ...
 func (c *CompanyValuation) BulkRating() (sList []objects.Rating, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationBulkRating, nil)
+	data, err := c.Client.Get(UrlAPICompanyValuationBulkRating, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -1421,7 +1421,7 @@ func (c *CompanyValuation) BulkRating() (sList []objects.Rating, err error) {
 
 // RatiosTTMBulk ...
 func (c *CompanyValuation) RatiosTTMBulk() (rList []objects.FinancialRatiosTTM, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationRatiosTTMBulk, nil)
+	data, err := c.Client.Get(UrlAPICompanyValuationRatiosTTMBulk, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -1436,7 +1436,7 @@ func (c *CompanyValuation) RatiosTTMBulk() (rList []objects.FinancialRatiosTTM, 
 
 // DCFBulk ...
 func (c *CompanyValuation) DCFBulk() (dList []objects.DailyDiscountedCashFlow, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationDCFBulk, nil)
+	data, err := c.Client.Get(UrlAPICompanyValuationDCFBulk, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -1451,7 +1451,7 @@ func (c *CompanyValuation) DCFBulk() (dList []objects.DailyDiscountedCashFlow, e
 
 // SharesFloatAll - All latest shares float available
 func (c *CompanyValuation) SharesFloatAll() (sList []objects.SharesFloat, err error) {
-	data, err := c.Client.Get(urlAPICompanyValuationSharesFloatAll, nil)
+	data, err := c.Client.Get(UrlAPICompanyValuationSharesFloatAll, nil)
 	if err != nil {
 		return nil, err
 	}
@@ -1467,7 +1467,7 @@ func (c *CompanyValuation) SharesFloatAll() (sList []objects.SharesFloat, err er
 // SharesFloat - Shares float for symbol
 func (c *CompanyValuation) SharesFloat(symbol string) (sList []objects.SharesFloat, err error) {
 	data, err := c.Client.Get(
-		urlAPICompanyValuationSharesFloat,
+		UrlAPICompanyValuationSharesFloat,
 		map[string]string{
 			"symbol": symbol,
 		},
