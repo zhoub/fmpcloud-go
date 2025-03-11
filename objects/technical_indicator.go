@@ -1,5 +1,7 @@
 package objects
 
+import "time"
+
 // Base const type TechnicalIndicatorResolution, TechnicalIndicatorType
 const (
 	TechnicalIndicatorResolution1Min  TechnicalIndicatorResolution = "1min"
@@ -33,6 +35,8 @@ type RequestIndicators struct {
 	Indicator  TechnicalIndicatorType
 	Symbol     string
 	Timeperiod int64
+	From       *time.Time
+	To         *time.Time
 }
 
 // ResponseIndicators ...
