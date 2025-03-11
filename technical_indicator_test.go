@@ -13,7 +13,7 @@ func TestIndicators(t *testing.T) {
 	}
 
 	_, err = APIClient.TechnicalIndicator.Indicators(objects.RequestIndicators{
-		Resolution: objects.TechnicalIndicatorResolutionDaily,
+		Resolution: objects.TechnicalIndicatorResolution1Day,
 		Indicator:  objects.TechnicalIndicatorTypeSMA,
 		Timeperiod: 10,
 		Symbol:     "AAPL",

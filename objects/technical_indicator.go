@@ -10,7 +10,8 @@ const (
 	TechnicalIndicatorResolution30Min TechnicalIndicatorResolution = "30min"
 	TechnicalIndicatorResolution1Hour TechnicalIndicatorResolution = "1hour"
 	TechnicalIndicatorResolution4Hour TechnicalIndicatorResolution = "4hour"
-	TechnicalIndicatorResolutionDaily TechnicalIndicatorResolution = "daily"
+	TechnicalIndicatorResolution1Day  TechnicalIndicatorResolution = "1day"
+	TechnicalIndicatorResolution1Week TechnicalIndicatorResolution = "1week"
 
 	TechnicalIndicatorTypeEMA               TechnicalIndicatorType = "ema"
 	TechnicalIndicatorTypeSMA               TechnicalIndicatorType = "sma"
